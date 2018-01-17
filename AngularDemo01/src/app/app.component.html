@@ -11,16 +11,16 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" placeholder="E-mail address">
+            <input type="text" name="email" placeholder="E-mail address" #userName>
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" #password>
           </div>
         </div>
-        <button class="ui primary button" type="button">Login </button>
+        <button class="ui primary button" type="button" style="width: 150px;" (click)="dologin(userName, password)">Login</button>
       </div>
 
       <div class="ui error message"></div>
