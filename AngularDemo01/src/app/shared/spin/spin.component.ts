@@ -5,16 +5,17 @@ import { SpinService } from './spin.service';
  * 旋转组件
  */
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'c-spin',
     templateUrl: './spin.component.html',
-    styleUrls:['./spin.component.scss']
+    styleUrls: ['./spin.component.scss']
 })
 export class SpinComponent {
 
-    //标识
+    // 标识
     showSpin: boolean = false;
 
-    //数量
+    // 数量
     count: number = 0;
 
     constructor(private spinService: SpinService) {

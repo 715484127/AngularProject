@@ -48,6 +48,7 @@ export class ToastBoxComponent implements OnInit {
    * 获得所有toast配置
    */
   getToastConfigs(): Array<ToastConfig> {
+    console.log(this.toastConfigs);
     return this.toastConfigs;
   }
 
