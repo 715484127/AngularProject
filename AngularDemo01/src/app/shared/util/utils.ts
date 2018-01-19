@@ -45,11 +45,11 @@ export class Utils {
     * @returns {string}
     */
     static replaceUrl(url) {
-        if(-1!=url.indexOf('http://')){
+        if (-1 !== url.indexOf('http://')) {
             return 'http://' + url.substring(7).replace(/\/\//g, '/');
-        }else if(-1!=url.indexOf('https://')){
+        } else if (-1 !== url.indexOf('https://')) {
             return 'https://' + url.substring(8).replace(/\/\//g, '/');
-        }else{
+        } else {
             return url;
         }
     }
@@ -123,7 +123,7 @@ export class Utils {
      *  @returns {string}
      */
     static UUID(): string {
-        return 'xxxxxxxx-xxxx-6xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,  (c)=> {
+        return 'xxxxxxxx-xxxx-6xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
@@ -134,7 +134,7 @@ export class Utils {
      *  @returns {string}
      */
     static shortUUID(): string {
-        return 'xx-6xy'.replace(/[xy]/g, (c)=> {
+        return 'xx-6xy'.replace(/[xy]/g, (c) => {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(6);
         });
@@ -159,10 +159,10 @@ export class Utils {
 
         if (targetOffset.top + targetOuterHeight + elementOuterHeight > viewport.height) {
             top = targetOffset.top + windowScrollTop - elementOuterHeight;
-            if(top < 0) {
+            if (top < 0) {
                 top = 0 + windowScrollTop;
             }
-        } 
+        }
         else {
             top = targetOuterHeight + targetOffset.top + windowScrollTop;
         }
@@ -178,7 +178,7 @@ export class Utils {
 
     /**
      * 获得尺寸
-     * @param element 
+     * @param element
      */
     static getHiddenElementDimensions(element: any): any {
         let dimensions: any = {};
@@ -222,11 +222,11 @@ export class Utils {
         return (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
     }
 
-     /**
-     * 获得实际位置
-     * @param element 
-     * @param target 
-     */
+    /**
+    * 获得实际位置
+    * @param element 
+    * @param target 
+    */
     static relativePosition(element: any, target: any): void {
         let elementDimensions = element.offsetParent ? { width: element.offsetWidth, height: element.offsetHeight } : this.getHiddenElementDimensions(element);
         let targetHeight = target.offsetHeight;
@@ -235,18 +235,18 @@ export class Utils {
         let windowScrollTop = this.getWindowScrollTop();
         let viewport = this.getViewport();
         let top, left;
-        
+
         if ((targetOffset.top + targetHeight + elementDimensions.height) > viewport.height) {
             top = -1 * (elementDimensions.height);
-            if(targetOffset.top + top < 0) {
+            if (targetOffset.top + top < 0) {
                 top = 0;
             }
         }
         else {
             top = targetHeight;
         }
-            
-            
+
+
         if ((targetOffset.left + elementDimensions.width) > viewport.width)
             left = targetWidth - elementDimensions.width;
         else
@@ -259,30 +259,30 @@ export class Utils {
 
     /**
      * 是否成功
-     * @param val 
+     * @param val
      */
-    static  resultSuccess(val:string):boolean{
-         return val==='success';
+    static resultSuccess(val: string): boolean {
+        return val === 'success';
     }
 
     /**
      * 是否失败
-     * @param val 
+     * @param val
      */
-   static  resultFailure(val:string):boolean{
-        return val==='failure';
-   }
+    static resultFailure(val: string): boolean {
+        return val === 'failure';
+    }
 
 
-     /**
-     * 是否错误
-     * @param val 
-     */
-    static  resultError(val:string):boolean{
-        return val==='error';
-   }
-  
-    
+    /**
+    * 是否错误
+    * @param val
+    */
+    static resultError(val: string): boolean {
+        return val === 'error';
+    }
+
+
 
 
 
