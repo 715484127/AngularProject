@@ -92,18 +92,21 @@
 </head>
 
 <body>
+    <!-- 旋转容器 等待动画-->
     <div class="spin-container" id="pageSpin">
         <div class="spin1">
             <div class="spin2"></div>
             <div class="spin3"></div>
         </div>
     </div>
+
     <script type="text/javascript">
         const initialize = function () {
             let pageSpin = document.getElementById("pageSpin");
             pageSpin.style.display = 'block';
+            //页面加载状态改变时执行
             document.onreadystatechange = function () {
-                if (document.readyState == "complete") {
+                if (document.readyState == "complete") { // 页面加载完成
                     pageSpin.style.display = 'none';
                 }
             }

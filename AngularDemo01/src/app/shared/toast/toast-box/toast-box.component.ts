@@ -6,7 +6,7 @@ import { ToastService } from '../toast.service';
   selector: 'app-toast-box',
   templateUrl: './toast-box.component.html',
   styleUrls: ['./toast-box.component.scss'],
-  animations: [
+  animations: [ // 定义动画
     trigger('animation', [
       state('none', style({})),
       state('decent', style([{ opacity: 1 }, { maxHeight: 300 }])),
@@ -28,6 +28,7 @@ import { ToastService } from '../toast.service';
     ])
   ]
 })
+
 export class ToastBoxComponent implements OnInit {
   @Input() toastAnimation: string = 'none';
   @Input() toastPosition: string = 'c-toast-top-center';
